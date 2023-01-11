@@ -1,6 +1,2 @@
 #!/usr/bin/env ruby
-x = ARGV[0]
-def yello(y)
-    puts y.scan(/School/).join
-end
-yello(x)
+puts ARGV[0].scan(/School/).join
