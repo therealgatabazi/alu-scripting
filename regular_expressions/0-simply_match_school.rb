@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 x = ARGV[0]
-def y (x)
+def fonction (x)
     puts x.scan(/School/).join
 end 
-y(x)
+fonction(x)
