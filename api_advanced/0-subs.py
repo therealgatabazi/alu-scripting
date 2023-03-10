@@ -3,16 +3,18 @@
 import requests
 
 
-def subscribers_count(subreddit_name):
+def number_of_subscribers(subreddit):
     """DOC"""
-    subreddit_url = f"https://www.reddit.com/r/{subreddit_name}/about.json"
+    reddit_url = "https://www.reddit.com/r/{}/about.json" \
+        .format(subreddit)
 
-    user_agent = {'User-agent': 'Mozilla/5.0'}
-    subreddit_response = requests.get(subreddit_url, headers=user_agent)
+    header = {'User-agent': 'Mozilla/5.0'}
+    response = requests.get(reddit_url,
+                            headers=header
+                            )
 
-    if subreddit_response.status_code == 200:
-        subreddit_data = subreddit_response.json()['data']
-        subscriber_count = subreddit_data['subscribers']
-        return subscriber_count
-    else:
-        return 0
+    if response.status_code == 200:
+        data = response.json()['data']
+        subs = data['subscribers']
+        return subs
+    return 0
