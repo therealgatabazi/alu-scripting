@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This script recursively retrieves the titles of hot articles from a given subreddit."""
+"""This module contains functions for working with the Reddit API."""
 import requests
 
 
